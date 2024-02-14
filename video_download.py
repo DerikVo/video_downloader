@@ -11,19 +11,19 @@ def download_list(urls, prefix):
   =====================================
   Notebook originally done in Google Colab, so minor adaptions may be needed
   '''
-  
+  # Loops through each url in the list and downloads the url
   for url in urls:
       !youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' {url}
 
     
 
-    # Get the current working directory.
+    # Get the current path to the directory/ folder to store videos; this example is specifically for Google Colab, will need to manually create the folder, but code can be edited to generate one if one doesnt exist.
   path = '/content/videos'
 
-    # Get a list of all files in the current working directory.
+    # Get a list of all files in the specified directory.
   files = os.listdir(path)
 
-    # Rename each file by appending the prefix to the beginning of the file name.
+    # Rename each file by appending the prefix to the beginning of the file name. This is so I know what project each video is for.
   for file in files:
       idx = file.find('-')
 
