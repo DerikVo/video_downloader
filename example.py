@@ -1,8 +1,3 @@
-# identify current working directory
-!pwd
-# moves into videos directory
-%cd videos
-
 # list of urls I want to download
 url = [
   'link',
